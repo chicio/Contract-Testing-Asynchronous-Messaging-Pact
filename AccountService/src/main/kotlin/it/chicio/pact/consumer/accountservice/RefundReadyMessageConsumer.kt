@@ -15,7 +15,7 @@ class RefundReadyMessageConsumer(
     fun consume(message: String): Either<RefundReadyMessageConsumerError, RefundCommunicationSent> =
         refundReadyMessagePayloadExtractor
             .extract(message)
-            .flatMap {
-                sendCommunicationForRefundReadyUseCase.execute()
+            .flatMap { refundReadyMessage ->
+                sendCommunicationForRefundReadyUseCase.execute(refundReadyMessage)
             }
 }

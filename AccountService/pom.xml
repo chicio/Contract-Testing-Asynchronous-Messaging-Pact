@@ -17,6 +17,7 @@
 		<java.version>11</java.version>
 		<kotlin.version>1.5.31</kotlin.version>
 		<arrow.version>1.0.0</arrow.version>
+		<pact.version>4.2.14</pact.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -31,11 +32,13 @@
 			<groupId>org.jetbrains.kotlin</groupId>
 			<artifactId>kotlin-stdlib-jdk8</artifactId>
 		</dependency>
+		<!-- arrow -->
 		<dependency>
 			<groupId>io.arrow-kt</groupId>
 			<artifactId>arrow-core</artifactId>
 			<version>${arrow.version}</version>
 		</dependency>
+		<!-- base test dependencies -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -53,10 +56,11 @@
 			<version>1.12.0</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- pact consumer dependency -->
 		<dependency>
 			<groupId>au.com.dius.pact.consumer</groupId>
 			<artifactId>junit5</artifactId>
-			<version>4.2.14</version>
+			<version>${pact.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -87,6 +91,14 @@
 						<version>${kotlin.version}</version>
 					</dependency>
 				</dependencies>
+			</plugin>
+			<plugin>
+				<groupId>au.com.dius.pact.provider</groupId>
+				<artifactId>maven</artifactId>
+				<version>${pact.version}</version>
+				<configuration>
+					<pactBrokerUrl>http://localhost</pactBrokerUrl>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

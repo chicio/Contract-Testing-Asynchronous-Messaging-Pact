@@ -1,6 +1,7 @@
 package it.chicio.pact.consumer.accountservice
 
 import arrow.core.Either
+import it.chicio.pact.consumer.accountservice.RefundReadyMessageConsumerError.CantExtractMessage
 import java.math.BigDecimal
 
 data class Money(
@@ -8,11 +9,11 @@ data class Money(
     val currency: String
 )
 
-data class Message(
+data class RefundReadyMessage(
     val refundId: Long,
     val amount: Money
 )
 
 interface RefundReadyMessagePayloadExtractor {
-    fun extract(message: String): Either<RefundReadyMessageConsumerError, Message>
+    fun extract(message: String): Either<CantExtractMessage, RefundReadyMessage>
 }
