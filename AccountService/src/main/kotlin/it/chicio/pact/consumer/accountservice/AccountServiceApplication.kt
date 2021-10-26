@@ -1,4 +1,4 @@
-package it.chicio.pact.consumer.AccountService
+package it.chicio.pact.consumer.accountservice
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
