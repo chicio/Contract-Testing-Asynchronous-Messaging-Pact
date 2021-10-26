@@ -29,4 +29,4 @@ docker-compose up
 mvn pact:publish
 ``` 
 
-* execute the test fo the `RefundService` producer to verify the pact published
+* execute the test of the `RefundService` producer to verify the pact published
