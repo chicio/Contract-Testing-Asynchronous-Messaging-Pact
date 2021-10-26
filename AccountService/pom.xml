@@ -92,6 +92,7 @@
 					</dependency>
 				</dependencies>
 			</plugin>
+			<!-- pact publish plugin -->
 			<plugin>
 				<groupId>au.com.dius.pact.provider</groupId>
 				<artifactId>maven</artifactId>

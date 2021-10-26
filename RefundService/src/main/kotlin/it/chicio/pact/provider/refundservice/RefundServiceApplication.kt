@@ -1,4 +1,4 @@
-package it.chicio.pact.provider.RefundService
+package it.chicio.pact.provider.refundservice
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
