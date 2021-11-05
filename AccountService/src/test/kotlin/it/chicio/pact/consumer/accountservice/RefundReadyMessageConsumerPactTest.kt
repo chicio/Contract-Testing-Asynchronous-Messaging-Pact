@@ -29,13 +29,12 @@ class RefundReadyMessageConsumerPactTest {
 
     @Pact(consumer = "account-service", provider = "refund-service")
     fun refundReadyMessagePact(builder: MessagePactBuilder): MessagePact {
-        val pactDslJsonBody = PactDslJsonBody()
         return builder
             .given("a refund ready to be sent to the user")
             .hasPactWith("refund-service")
             .expectsToReceive("the refund data to be communicated")
             .withContent(
-                pactDslJsonBody
+                PactDslJsonBody()
                     .numberType("refundId", 123)
                     .`object`(
                         "amount",
