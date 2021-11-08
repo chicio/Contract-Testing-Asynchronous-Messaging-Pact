@@ -36,7 +36,7 @@ class RefundReadyMessageProducerTest {
 
     @BeforeEach
     fun before(context: PactVerificationContext) {
-        context.target = MessageTestTarget()
+        context.target = MessageTestTarget(packagesToScan = listOf(this::class.java.packageName))
     }
 
     @State("a refund ready to be sent to the user")
